@@ -84,7 +84,34 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      <div className="contact-buttons fixed z-10 gap-3 right-2 bottom-2 md:right-10 md:bottom-10 flex flex-col justify-center items-center">
+        <div className="contact-button">
+          <a href="tel:+971 4 554 6090">
+            <Image
+              src="/Call Icon.svg"
+              alt="Phone Icon"
+              width={60}
+              height={60}
+              className="phone-icon"
+            />
+          </a>
+        </div>
+        <div className="contact-button">
+          <a
+            href="https://www.whatsapp.com/"
+            target="_blank"
+            className="whatsapp icon"
+          >
+            <Image
+              src="/WhatsApp Icon.svg"
+              alt="WhatsApp Icon"
+              width={60}
+              height={60}
+            />
+          </a>
+        </div>
+      </div>
       <section className="navbar-with-icon bg-neutral-900 flex justify-center items-center w-full">
         <Image
           src="/KDS_icon_white.svg"
