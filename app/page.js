@@ -102,7 +102,7 @@ export default function Home() {
               Dubai
             </h1>
             <p className="text-gray-300 leading-7 text-sm md:text-base lg:text-base xl:text-lg">
-              Elevate your Dubai living with Key One Design Solution's
+              Elevate your Dubai living with Key One Design Solution&#39;s
               exceptional interior design services, crafted for the epitome of
               luxury and enhanced home experiences.
             </p>
