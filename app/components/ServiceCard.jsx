@@ -16,7 +16,7 @@ const ServiceCard = ({ imageTag, title, description, showIndex, handleOnMouseEnt
             serviceCardRef.current.classList.remove('service-cards');
             serviceCardRef.current.classList.remove('show-hover');
         }
-    }, [showIndex])
+    }, [showIndex, imageTag])
 
     const handleClickInquire = () => {
         bottomFormRef.current.scrollIntoView({ behavior: 'smooth' });

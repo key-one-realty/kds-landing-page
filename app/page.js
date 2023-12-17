@@ -9,6 +9,7 @@ export default function Home() {
 
   const [showIndex, setShowIndex] = useState(1);
   const [isMouseOnCard, setIsMouseOnCard] = useState(false);
+  /*eslint-disable react-hooks/exhaustive-deps */ // This is to disable the exhaustive-deps warning for the interval variable
   let interval;
 
   useEffect(() => {

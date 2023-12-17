@@ -29,7 +29,7 @@ const HeroForm = () => {
             <form className="text-white bg-zinc-900 py-10  rounded-xl flex flex-col justify-center items-center gap-5 w-full" onSubmit={handleSubmit(onSubmit)}>
               <div className="form caption-top">
                 <h1 className="text-white text-center text-lg md:text-lg lg:text-2xl  font-semibold leading-[35px]">
-                  Let's Redefine Your Space!
+                  Let&#39;s Redefine Your Space!
                 </h1>
               </div>
               <div className="form-content w-full px-14 flex flex-col md:gap-3 lg:gap-6 gap-4 items-center">
