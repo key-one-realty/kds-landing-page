@@ -2,18 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --white-base: 255, 255, 255;
+  --off-white: 247, 247, 247;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+
+*{
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -21,7 +29,123 @@ body {
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      rgb(var(--off-white))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--off-white));
+    overflow-x: hidden;
+}
+
+/* @media (max-width: 768px) {
+  .hero-section{
+    background: rgba(19,19,19,1);
+background: -moz-linear-gradient(top, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: -webkit-gradient(top, bottom, color-stop(40%, rgba(19,19,19,1)), color-stop(60%, rgba(19,19,19,0.68)), color-stop(83%, rgba(19,19,19,0.62)), color-stop(91%, rgba(19,19,19,0.6)), color-stop(94%, rgba(19,19,19,0.6)));
+background: -webkit-linear-gradient(top, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: -o-linear-gradient(top, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: -ms-linear-gradient(top, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: linear-gradient(to bottom, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#131313', GradientType=0 );
+  }
+}
+.hero-section{
+  background: rgba(19,19,19,1);
+background: -moz-linear-gradient(left, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: -webkit-gradient(left top, right top, color-stop(40%, rgba(19,19,19,1)), color-stop(60%, rgba(19,19,19,0.68)), color-stop(83%, rgba(19,19,19,0.62)), color-stop(91%, rgba(19,19,19,0.6)), color-stop(94%, rgba(19,19,19,0.6)));
+background: -webkit-linear-gradient(left, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: -o-linear-gradient(left, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: -ms-linear-gradient(left, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+background: linear-gradient(to right, rgba(19,19,19,1) 40%, rgba(19,19,19,0.68) 60%, rgba(19,19,19,0.62) 83%, rgba(19,19,19,0.6) 91%, rgba(19,19,19,0.6) 94%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#131313', GradientType=1 );
+} */
+
+.right-hero-section{
+  background-image: url('/right-hand-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .service-cards {
+  transition: all 0.2s ease-in-out;
+} */
+
+
+@media (min-width: 768px ) and (max-width: 1280px) {
+  .service-card-md {
+      width: 90vw;
+  }
+  .service-card-md .image{
+    width: 50vw;
+  }
+  .service-card-md .service-content{
+    width: 50vw;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .service-cards .show{
+    visibility: hidden;
+  }
+
+  .card-default {
+    width: 170px !important;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .service-cards:hover{
+    width: 420px !important;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .service-cards:hover .show{
+    visibility: visible !important;
+  }
+
+  .show p {
+    visibility: hidden;
+  }
+
+  .show-hover {
+    width: 420px !important;
+    transition: all 0.2s ease-in-out;
+  }
+  .show-hover .show p{
+    visibility: visible;
+  }
+}
+
+.present-form{
+  animation: reveal-form 0.3s ease-in-out forwards;
+  /* display: flex; */
+}
+
+@keyframes reveal-form {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    display: flex;
+  }
+}
+
+.previous-form{
+  animation: hide-form 0.2s ease-in forwards;
+  /* display: none; */
+}
+
+@keyframes hide-form {
+  0% {
+    display: none;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100px);
+    display: none;
+  }
 }
