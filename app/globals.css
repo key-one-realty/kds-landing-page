@@ -134,7 +134,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', end
 
 .previous-form{
   animation: hide-form 0.2s ease-in forwards;
-  /* display: none; */
+  display: none;
 }
 
 @keyframes hide-form {
