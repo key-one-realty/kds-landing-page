@@ -1,10 +1,16 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
+import { useLoadScript, Autocomplete } from "@react-google-maps/api";
 import Image from "next/image";
 import ServiceCard from "./components/ServiceCard";
 import HeroForm from "./components/HeroForm";
 
 export default function Home() {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    libraries: ["places"],
+  });
+
   const bottomFormRef = useRef(null);
 
   const [showIndex, setShowIndex] = useState(1);
@@ -42,6 +48,10 @@ export default function Home() {
     if (showIndex === 6) {
       setShowIndex(1);
     }
+  };
+
+  const handleClickContact = () => {
+    bottomFormRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   const services = [
@@ -85,7 +95,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative">
-      <div className="contact-buttons fixed z-10 gap-3 right-2 bottom-2 md:right-10 md:bottom-10 flex flex-col justify-center items-center">
+      {/* <div className="contact-buttons fixed z-10 gap-3 right-2 bottom-2 md:right-10 md:bottom-10 flex flex-col justify-center items-center">
         <div className="contact-button">
           <a href="tel:+971 4 554 6090">
             <Image
@@ -111,7 +121,7 @@ export default function Home() {
             />
           </a>
         </div>
-      </div>
+      </div> */}
       <section className="navbar-with-icon bg-neutral-900 flex justify-center items-center w-full">
         <Image
           src="/KDS_icon_white.svg"
@@ -122,7 +132,7 @@ export default function Home() {
         />
       </section>
       <section className="hero-section flex flex-col gap-10 lg:gap-0 lg:flex-row justify-center items-center bg-neutral-900 w-full h-fit pt-20 lg:pt-0 lg:h-[93svh]">
-        <div className="left w-full lg:w-[40vw] flex h-full justify-center items-center px-5 lg:px-10 xl:px-20">
+        <div className="left w-full lg:w-[40vw] xl:w-[45vw] flex h-full justify-center items-center px-5 lg:px-10 xl:px-20">
           <div className="hero-content text-center lg:text-left w-full lg:w-[40vw]">
             <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-9">
               Elevate Your Living Experience with Luxury Interior Design in
@@ -133,19 +143,22 @@ export default function Home() {
               exceptional interior design services, crafted for the epitome of
               luxury and enhanced home experiences.
             </p>
-            <button className="px-5 py-3 text-sm md:text-base lg:text-base xl:text-lg mt-4 bg-white rounded-md">
+            <button
+              className="px-5 py-3 text-sm md:text-base lg:text-base xl:text-lg mt-4 bg-white rounded-md"
+              onClick={handleClickContact}
+            >
               Contact us!
             </button>
           </div>
         </div>
-        <div className="right-hero-section relative w-full lg:w-[60vw] flex h-full justify-center items-center pb-20 lg:pb-0">
+        <div className="right-hero-section relative w-full lg:w-[60vw] xl:w-[55vw] flex h-full justify-center items-center pb-20 lg:pb-0">
           <div className="form-container flex w-full justify-center items-center sm:w-[60vw]">
-            <HeroForm />
+            <HeroForm isLoaded={isLoaded} loadError={loadError} />
           </div>
         </div>
       </section>
       <section className="services-section w-full py-16 lg:pb-72">
-        <div className="services-content w-[90vw] mx-auto">
+        <div className="services-content w-[90vw] xxl:w-[70vw] mx-auto">
           <div className="header">
             <h1 className="text-neutral-900 w-fit text-3xl font-medium border-b border-black pb-1">
               Our Services

@@ -83,7 +83,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', end
 }
 
 
-@media (min-width: 1440px) {
+@media (min-width: 1281px) {
   .service-cards .show{
     visibility: hidden;
   }
@@ -149,3 +149,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', end
     display: none;
   }
 }
+
+/* .iti__flag {background-image: url("path/to/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("path/to/flags@2x.png");}
+} */
