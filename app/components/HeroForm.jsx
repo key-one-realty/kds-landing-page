@@ -12,13 +12,21 @@ import Image from 'next/image';
 
 const HeroForm = ({ isLoaded, loadError }) => {
 
-  const currentUrl = "https://register-interest.keyonedesignsolution.com/" + usePathname();
+  const [currentUrl, setCurrentUrl] = useState("https://register-interest.keyonedesignsolution.com/");
   const [isLoading, setIsLoading] = useState(false);
   const [apiError, setApiError] = useState(null);
   const [apiSuccess, setApiSuccess] = useState(null);
   const [phone, setPhone] = useState(null);
 
   const phoneInputRef = useRef(null);
+
+  useEffect(() => {
+    console.log(currentUrl);
+    if(window.location.search) {
+      const searchParams = new URLSearchParams(window.location.search);
+      setCurrentUrl("https://register-interest.keyonedesignsolution.com/" + searchParams.toString());
+    }
+  }, [currentUrl]);
 
   useEffect(() => {
     if(apiSuccess) {

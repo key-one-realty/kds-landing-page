@@ -196,7 +196,7 @@ export default function Home() {
       </section>
       <footer className="footer bg-black flex justify-center items-center py-5">
         <p className="text-white text-center text-xs sm:text-base">
-          © 2023 Key One Design Solution. All Rights Reserved. Privacy Policy
+          © 2023 Key One Design Solution. All Rights Reserved.
         </p>
       </footer>
     </main>
