@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from 'react'
 import { set, useForm } from 'react-hook-form';
-import { usePathname } from 'next/navigation'
-import AutocompleteInput from './AutocompleteInput';
 
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
